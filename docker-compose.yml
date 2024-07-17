@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: 'postgres:latest'
+    container_name: my-postgres
+    environment:
+      POSTGRES_DB: postgres_preparation
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - '5432:5432' # Map host port 5432 to container port 5432
+    volumes:
+      - /Users/sandeepvarmakanumuri/Downloads/Code/preperation_interviews/DBS_data_storage/postgresql:/var/lib/postgresql/data
+  
+  mysql:
+    image: mysql:latest
+    container_name: my-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: dbname2
+      MYSQL_USER: dbuser
+      MYSQL_PASSWORD: dbpass
+    ports:
+      - "3306:3306"  # Map host port 3306 to container port 3306
